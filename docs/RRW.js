@@ -1,45 +1,188 @@
+function toggleTransparencyOn(elementIds) {
+    elementIds.forEach((elementId) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            // if (element.id === elementId) {
+                const currentOpacity = parseFloat(window.getComputedStyle(element).opacity);
+                if (currentOpacity < 1) {
+                    element.style.opacity = "1";
+                }
+            // }
+        }
+    });
+}
 
-// window.onload = function () {
+function toggleTransparencyOff(elementIds) {
+    elementIds.forEach((elementId) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const currentOpacity = parseFloat(window.getComputedStyle(element).opacity);
+            if (currentOpacity === 1) {
+                element.style.opacity = "0.0"; // You can set the desired opacity here
+            }
+        }
+    });
+}
+
+function myClickHandler(whateverinput) {
+    // const inputString = whateverinput.toString(); // Convert to string
+    // console.log("console input string" + inputString + "gives the result:" + whateverinput);
+    console.log("console result:" + whateverinput);
+}
+
+
+function toggleDisplayOn(elementIds) {
+    elementIds.forEach((elementId) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const currentDisplay = window.getComputedStyle(element).display;
+            element.style.display = currentDisplay === "none" ? "inline-block" : "inline-block";
+
+            // Toggle child elements
+            const childElements = element.getElementsByTagName('*');
+            for (let i = 0; i < childElements.length; i++) {
+                const child = childElements[i];
+                const childDisplay = window.getComputedStyle(child).display;
+                child.style.display = childDisplay === "none" ? "inline-block" : "inline-block";
+            }
+        }
+    });
+    console.log("inline-block display now on for:" + elementIds);
+}
+
+
+
+function toggleDisplayBlock(elementIds) {
+    elementIds.forEach((elementId) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const currentDisplay = window.getComputedStyle(element).display;
+            element.style.display = currentDisplay === "none" ? "block" : "block";
+
+            // Toggle child elements
+            const childElements = element.getElementsByTagName('*');
+            for (let i = 0; i < childElements.length; i++) {
+                const child = childElements[i];
+                const childDisplay = window.getComputedStyle(child).display;
+                child.style.display = childDisplay === "none" ? "block" : "block";
+            }
+        }
+    });
+    console.log("block display now on for:" + elementIds);
+}
+
+
+function toggleDisplayOff(elementIds) {
+    elementIds.forEach((elementId) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const currentDisplay = window.getComputedStyle(element).display;
+            element.style.display = currentDisplay ===  "inline-block" ? "none" : "none" //"none" ? "block" : "none"; //
+
+            // Toggle child elements
+            const childElements = element.getElementsByTagName('*');
+            for (let i = 0; i < childElements.length; i++) {
+                const child = childElements[i];
+                const currentDisplay = window.getComputedStyle(child).display;
+                child.style.display = currentDisplay === "inline-block" ? "none" : "none";
+            }
+        }
+    });
+    console.log("display now off  for:" + elementIds);
+}
+
+function toggleAlignment() {
+    const navItems = document.querySelectorAll('.nav li');
+
+    navItems.forEach((item) => {
+        if (item.style.float === '' || item.style.float === 'left') {
+            item.style.float = 'none';
+            item.style.margin = '0 auto'; // Center alignment
+        } else {
+            item.style.float = 'left'; // Left alignment
+            item.style.margin = ''; // Reset margin
+        }
+    });
+}
+
+// function getElementsWithPrefixExcluding(prefix, idToExclude) {
+//     const elementsWithPrefix = [];
+//     const allElements = document.getElementsByTagName('*'); // Get all elements on the page
+//
+//     for (let i = 0; i < allElements.length; i++) {
+//         const element = allElements[i];
+//         if (element.id && element.id.startsWith(prefix) && element.id !== idToExclude) {
+//             elementsWithPrefix.push(element);
+//         }
+//     }
+//
+//     return elementsWithPrefix;
+// }
+
+function getArrayofElementsWithPrefixExcluding(prefix, ...idsToExclude) {
+    const elements = document.querySelectorAll('[id^="' + prefix + '"]');
+    const elementIds = [];
+    elements.forEach((element) => {
+        const elementId = element.id;
+        if (!idsToExclude.includes(elementId)) {
+            elementIds.push(elementId);
+        }
+    });
+    return elementIds;
+}
+
+
+function getElementsWithPrefixExcluding(prefix, idToExclude) {
+    const elements = document.querySelectorAll('[id^="' + prefix + '"]');
+    const elementIds = [];
+    elements.forEach((element) => {
+        const elementId = element.id;
+        if (elementId !== idToExclude) {
+            elementIds.push(elementId);
+        }
+    });
+    return elementIds;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-    const element1 = document.getElementById("element1");
-    const element2 = document.getElementById("element2");
-    const line = document.createElement("div");
-    line.id = "line";
+    const expandableSections = document.querySelectorAll(".expandable-section");
 
-    // Calculate coordinates for the line
-    const x1 = element1.getBoundingClientRect().left + element1.offsetWidth / 2;
-    const y1 = element1.getBoundingClientRect().bottom;
-    const x2 = element2.getBoundingClientRect().left + element2.offsetWidth / 2;
-    const y2 = element2.getBoundingClientRect().top;
+    expandableSections.forEach(function (section) {
+        section.addEventListener("click", function () {
+            const heading = this.querySelector(".expandable-heading");
+            const content = this.querySelector(".expandable-content");
 
-    // Create the line element
-    // const line = document.createElement("div");
-    line.classList.add("line");
-    line.style.position = "absolute";
-    line.style.width = "2px"; // Adjust line width as needed
-    line.style.height = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) + "px";
-    line.style.transformOrigin = "top left";
-    line.style.transform = `translate(${x1}px, ${y1}px) rotate(${Math.atan2(y2 - y1, x2 - x1)}rad)`;
-
-
-    // // Calculate the positions of the elements
-    // const rect1 = element1.getBoundingClientRect();
-    // const rect2 = element2.getBoundingClientRect();
-    //
-    // // Calculate the line's position and dimensions
-    // const left = rect1.left + rect1.width / 2;
-    // const top = rect1.top + rect1.height;
-    // const width = Math.abs(rect2.left - rect1.left);
-    // const height = 2; // Line thickness
-    //
-    // // Set the line's position and dimensions
-    // line.style.position = "absolute";
-    // line.style.left = left + "px";
-    // line.style.top = top + "px";
-    // line.style.width = width + "px";
-    // line.style.height = height + "px";
-
-    // Append the line to the body
-    document.body.appendChild(line);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                heading.style.display = "block";
+            } else {
+                content.style.display = "none";
+                heading.style.display = "block"; // You can adjust this to your preferred behavior
+            }
+        });
+    });
 });
-// };
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const headings = document.querySelectorAll(".expandable-heading");
+//     headings.forEach(function (heading) {
+//         heading.addEventListener("click", function () {
+//             const content = this.nextElementSibling;
+//             if (content.style.display === "none" || content.style.display === "") {
+//                 content.style.display = "block";
+//             } else {
+//                 content.style.display = "none";
+//             }
+//         });
+//     });
+// });
+
+
+// function togglesubordinatestatus(elementIds) {
+//     elementIds.forEach((elementId) => {
+//         const element = document.getElementById(elementId);
+//         if (element) {
+//             element.classList.toggle("transparent");
+//         }
+//     });
+// }

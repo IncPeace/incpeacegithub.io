@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap">
-    <link rel="stylesheet" type="text/css" href="RRW.css"> <!-- Assuming "styles.css" is in the same directory -->
-    <script src="RRW.js"></script>
-    <title>Inclusive Peace Demo site</title>
+    <link rel="stylesheet" type="text/css" href="RRW2.css"> <!-- Assuming "styles.css" is in the same directory -->
+    <script src="RRW2.js"></script>
+    <title>Title</title>
     <style>
-
         body {
             display: flex;
             justify-content: center;
@@ -17,57 +16,329 @@
             margin: 0;
             background-color: #ffffff; /* Background color for the entire page */
         }
-    .flowchart-container {
-        margin-top: 5px; /* Small margin from the top */
-    }
+        /*.flowchart-container {*/
+        /*    margin-top: 40px; !* Small margin from the top *!*/
+        /*}*/
     </style>
-
 </head>
-<!--Body text begins here -->
-<body>
+<body> <!-- Opening body tag here -->
 
 <div class = container>
+    <h1>Rapid Response Window Flowchart</h1>
     <div class="preamblecontainer">
-        <p> <strong> Purpose and how to use this document: </strong> <br>
+        <p class="cards-paragraph-style">
+            <!--            <strong> Purpose and how to use this document: </strong> <br>-->
             <strong> Purpose: </strong>This questionnaire is intended to help organisations understand their eligibility for grants under the Rapid Response Window (RRW). The Women’s Peace and Humanitarian Fund (WPHF) has launched a Rapid Response Window (RRW) to address the funding gap on women’s participation in formal peace processes and the implementation of peace agreements.
             <br><br>
             The WPHF RRW provides financing for strategic, short term and urgent services and initiatives led by women peacebuilders and women’s civil society organizations to increase women’s influence in national, subnational and international formal peace processes. The WPHF RRW does not support community-focused initiatives and is not intended to fund medium or long-term peacebuilding initiatives.
             <br><br>
             This new funding mechanism is open to formal peace processes in all ODA eligible countries with a track 1 or track 2 peace process or implementation of a peace agreement. See definitions of peace process, track 1, track 2 and implementation of peace agreement here.
             <br><br>
-            <strong> How to use this document: </strong> Scroll down and hover over the first question (Is there a peace process?). An information box will appear, alongside the relevant options to choose from.
+            <strong> How to use this document: </strong> Scroll down and click the first question (Is there a peace process?). An information box will appear, alongside the relevant options to choose from.
         </p>
-    </div>
-<!--    <div class="flowchart-super-container">-->
 
-    <div class="flowchart-container">
-                <div class="rectanglecard" >
-                    <div class="rectanglecard-inner">
-                        <!-- Your content goes here -->
-                        <h1> Is there a peace process? </h1>
+    </div>
+
+    <!--    <div class="flowchart-super-container">-->
+    <div class="right-aligned-text">  If the flowchart looks jumbled, it is because it was designed for a larger screen. Try zooming out.</div>
+    <div class="split-container">
+        <div class="nav-container">
+            <nav class="nav">
+                <ul>
+                    <li id="element0">
+                        <!--                    toggleDisplayOn(['card1']);toggleDisplayOff(['card2']);toggleAlignment();-->
+                        <a href="javascript:void(0);" onclick="toggleDisplayOn(['card1']);toggleDisplayOff(getElementsWithPrefixExcluding('card','card1'));toggleTransparencyOn(['card1','element1','element2','element3']);toggleTransparencyOff(['card2'])">Is there a peace process?</a> <!--    *toggleDisplay(['element1','element2','element3']);-->
+                        <ul>
+                            <li id="element1">
+                                <!--                            <a href="javascript:void(0);" id="yes" onclick="toggleDisplayOff(['card1','maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process','no-what-factors','no-yes','no-no']);toggleDisplayOn(['element4','yes-pre-process','yes-during-process','yes-post-process']);toggleTransparency(['card1','card2'])">Yes</a>  &lt;!&ndash;    //)&ndash;&gt;-->
+                                <a href="javascript:void(0);" id="yes" onclick="toggleDisplayOn(['cardYes.1']);toggleDisplayOff(getElementsWithPrefixExcluding('card','cardYes.1'));toggleTransparencyOff(['card1', 'maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process', 'no-what-factors','no-yes','no-no']);toggleTransparencyOn(['cardYes.1','element4','yes-pre-process','yes-during-process','yes-post-process'])">Yes</a>  <!--    //)-->
+                                <ul>
+                                    <li id="element4">
+                                        <a href="javascript:void(0);">What stage?</a>
+                                        <ul>
+
+                                            <li id="yes-pre-process" onclick = "toggleDisplayOff(['yes-during-process-h2a','yes-post-process-h2a','cardYes.3','cardYes.3.1','cardYes.4','cardYes.4.1',getElementsWithPrefixExcluding('card','cardYes.2','cardYes.2.1')]);toggleDisplayBlock(['cardYes.2','cardYes.2.1']);toggleDisplayOn(['yes-pre-process-h2a']);toggleTransparencyOn(['cardYes.2','cardYes.2.1','yes-pre-process-h2a']);myClickHandler(getArrayofElementsWithPrefixExcluding('card','cardYes.2','cardYes.2.1'))">
+                                                        <!-- for some reason the getelementswithprefixexcluding function doesn't seem to work in this spot, even though it captures the stuff it's supposed to. So I've called the same elements directly as part of an array    -->
+                                                <a href="javascript:void(0);">Pre-<br>process</a>
+                                                <ul>
+                                                    <li id="yes-pre-process-h2a" style="display: none">
+                                                        <a href="javascript:void(0);">
+                                                            <h2> What can be done? </h2> <br><br>
+                                                        <p> Consultations <br>
+                                                            Inclusive commissions <br>
+                                                            Mass action <br>
+                                                            Problem solving workshops <br>
+                                                            Shuttle diplomacy <br>
+                                                            Confidence building measures <br>
+                                                            Gendered risk assessments <br>
+                                                            Support structures <br>
+                                                        </p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li id="yes-during-process" onclick = "toggleDisplayOff(['yes-pre-process-h2a','yes-post-process-h2a','cardYes.2','cardYes.2.1','cardYes.4','cardYes.4.1',getElementsWithPrefixExcluding('card','cardYes.3','cardYes.3.1')]);toggleDisplayBlock(['cardYes.3','cardYes.3.1']);toggleDisplayOn(['yes-during-process-h2a']);toggleTransparencyOn(['cardYes.3','cardYes.3.1','yes-during-process-h2a']);myClickHandler(['yes-pre-process-h2a',getElementsWithPrefixExcluding('card','cardYes.3','cardYes.3.1')])"> <!-- toggleDisplayOff(['yes-pre-process-h2a','yes-post-process-h2a'])-->
+                                                <a href="javascript:void(0);">During<br>process</a>
+                                                <ul>
+                                                    <li id="yes-during-process-h2a" style="display: none;">
+                                                        <a href="javascript:void(0);">
+                                                                <h2> What can be done? </h2> <br><br>
+                                                            <p> Consultations <br>
+                                                                Direct representation <br>
+                                                                Inclusive commissions <br>
+                                                                Public decision-making <br>
+                                                                Mass action <br>
+                                                                Transfer and advocacy <br>
+                                                                Support structures <br>
+                                                                Observer status <br>
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li id="yes-post-process" onclick = "toggleDisplayOff(['yes-pre-process-h2a','yes-during-process-h2a','cardYes.3','cardYes.3.1','cardYes.2','cardYes.2.1',getElementsWithPrefixExcluding('card','cardYes.4','cardYes.4.1')]);toggleDisplayBlock(['cardYes.4','cardYes.4.1']);toggleDisplayOn(['yes-post-process-h2a']);toggleTransparencyOn(['cardYes.4','cardYes.4.1','yes-post-process-h2a']);myClickHandler(getArrayofElementsWithPrefixExcluding('card','cardYes.4','cardYes.4.1'))"> <!-- toggleDisplayOff(['yes-pre-process-h2a','yes-post-process-h2a'])-->
+                                                <a href="javascript:void(0);">Post-<br>process</a>
+                                                <ul>
+                                                    <li id="yes-post-process-h2a" style="display: none;">
+                                                        <a href="javascript:void(0);">
+                                                            <h2> What can be done? </h2> <br><br>
+                                                            <p> Inclusive commissions <br>
+                                                                Mass action <br>
+                                                                Public decision-making <br>
+                                                                Monitoring <br>
+                                                                Verification <br>
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                </ul>
+                            </li>
+                            <li id="element2">
+                                <!--                            <a href="javascript:void(0);" id="maybe"; onclick="toggleDisplayOff(['element4','yes-pre-process','yes-during-process','yes-post-process','no-what-factors','no-yes','no-no']);toggleDisplayOn(['maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process'])">Maybe</a>-->
+                                <a href="javascript:void(0);" id="maybe" onclick="toggleDisplayOn(['cardMaybe.1']);toggleDisplayOff(getElementsWithPrefixExcluding('card','cardMaybe.1'));toggleTransparencyOff(['cardYes.1','element4','yes-pre-process','yes-during-process','yes-post-process','no-what-factors','no-yes','no-no']);toggleTransparencyOn(['cardMaybe.1','element2','maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process'])">Maybe</a>
+                                <ul>
+                                    <li id = "maybe-non-inclusive-process">
+                                        <a href="javascript:void(0);" onclick="toggleDisplayOn(['cardMaybe.2']);toggleTransparencyOn(['cardMaybe.2']);toggleDisplayOff(getElementsWithPrefixExcluding('card','cardMaybe.2'))">"Political"<br>process</a>
+                                        <ul>
+                                        </ul>
+                                    </li>
+                                    <li id = "maybe-stalled-process">
+                                        <a href="javascript:void(0);" onclick="toggleDisplayOn(['cardMaybe.3']);toggleTransparencyOn(['cardMaybe.3']);toggleDisplayOff(getElementsWithPrefixExcluding('card','cardMaybe.3'))">Stalled<br>process</a>
+                                        <ul>
+                                        </ul>
+                                    </li>
+                                    <li id = "maybe-coopted-process">
+                                        <a href="javascript:void(0);" onclick="toggleDisplayOn(['cardMaybe.4']);toggleTransparencyOn(['cardMaybe.4']);toggleDisplayOff(getElementsWithPrefixExcluding('card','cardMaybe.4'))">Local or <br>partial process</a>
+                                        <ul>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="element3">
+                                <a href="javascript:void(0);" id="no" onclick="toggleDisplayOn(['cardNo.1']);toggleTransparencyOn(['cardNo.1']);toggleDisplayOff(getElementsWithPrefixExcluding('card','cardNo.1'));toggleTransparencyOff(['cardYes.1','element4','yes-pre-process','yes-during-process','yes-post-process', 'maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process']);toggleTransparencyOn(['no-what-factors','no-yes','no-maybe','no-no'])">No</a>
+                                <!--                            <a href="javascript:void(0);" id="no"; onclick="toggleDisplayOff(['yes-pre-process','yes-during-process','yes-post-process', 'maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process'])">No</a>-->
+                                <ul>
+                                    <li id="no-what-factors">
+                                        <a href="javascript:void(0);">Are there<br>factors that<br> create a<br>conducive<br>environment<br>for peace?</a>
+                                        <ul>
+                                            <li id="no-yes">
+                                                <a href="javascript:void(0);" >Yes</a>
+                                                <ul>
+                                                </ul>
+                                            </li>
+                                            <li id="no-maybe">
+                                                <a href="javascript:void(0);">Maybe</a>
+                                                <ul>
+                                                </ul>
+                                            </li>
+                                            <li id="no-no">
+                                                <a href="javascript:void(0);" >No</a>
+                                                <ul>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+<!--     HIDDEN CONTAINER BEGINS HERE -->
+        <div class="hidden-text-container">
+            <div class="toprectanglecard" id="card1">
+                <h2> Is there a peace process? </h2>
+                <p class="cards-paragraph-style"> <br> Track 1 processes refer to formal, official, high-level negotiations or mediation processes.  These typically involve top leaders from governments or belligerent parties, and can be mediated by the UN, regional organisations or national leaders.  </p>
+            </div>
+            <div class="rectanglecard" id="cardYes.1">
+                <h2> What stage is the process? </h2>
+                <p class="cards-paragraph-style"> <br> Peace processes are conventionally divided into distinct stages, which require different forms of engagement and international support. <br> Click the cards to see definitions of the stages. <br>
+                </p>
+            </div>
+            <div class="rectanglecard" id="cardYes.2">
+                <h2> (1) Pre-process </h2>
+                <p class="cards-paragraph-style"> <br> Pre-negotiations, or "talks about talks", where the parties attempt to create an environment in which negotiations are "thinkable" by discussing pre-conditions for negotiations, undertaking confidence building measures, among other things. During the pre-negotiation phase, the parties may release declarations, either joint or unilateral, of their intention to pursue negotiations.
+                </p>
+            </div>
+            <div class="rectanglecard" id="cardYes.2.1">
+                <h2> What interventions are relevant in the pre-process phase? <br> <br>  </h2>
+                    <div class="left-aligned-text" display="block">
+                        <div class="expandable-section">
+                            <h3 class="expandable-heading">Consultations <br> <br> </h3>
+                            <p class="expandable-content"> Consultations aggregate and summarise the opinion or experience of a group. They  can provide a way for negotiators and mediators to better understand the perspectives of society outside of the peace process during or prior to the process. This is a somewhat distinct issue to consultations conducted after the agreement, for example, as part of fact-finding investigations into abuses during the conflict. Consultations can help negotiators to understand the causes of the conflict, public opinion about the prospect of negotiations or the ongoing negotiations, as well as the issues the group consulted would like to see in the peace agreement. Consultations can be conducted by some or all of the parties to the negotiations, by the mediator, by working groups or committees, or by outside actors such as observer missions. These consultations are often unofficial or conducted on an ad hoc basis; however, sometimes consultations are officially incorporated into the negotiation structure. <br> <br> </p>
+                        </div>
+                        <div class="expandable-section">
+                            <h3 class="expandable-heading">Inclusive commissions <br> <br> </h3>
+                            <p class="expandable-content"> Inclusive commissions are quasi-bureaucratic bodies created to fulfil an administrative or political function in a peace or political reform process. There are generally three types of commissions: those established to prepare and conduct peace or political reform processes, postagreement commissions (e.g. transitional justice mechanisms, ceasefire monitoring, constitution-drafting), and permanent commissions that endure in the long-term (e.g. human rights commissions). <br> <br> </p>
+                        </div>
+                        <div class="expandable-section">
+                            <h3 class="expandable-heading"> Mass action <br> <br> </h3>
+                            <p class="expandable-content"> Mass action is a form of politics that takes place outside of formal institutions. Mass action can take the form of public demonstrations, street protests, or uprisings involving a large number of people before, during, or after the negotiations. They can be an instrument for the public to influence power holders, particularly when used in combination with social media and mass media. <br> <br> </p>
+                        </div>
+                        <div class="expandable-section">
+                            <h3 class="expandable-heading"> Problem solving workshops <br> <br> </h3>
+                            <p class="expandable-content"> Problem-solving workshops provide a  facilitated space for discussion and dialogue . They are often convened where peace talks are stalled or not yet started, with the goal of informally, confidentially exchanging perspectives, overcoming grievances, and formulating joint positions that may feed into the official negotiations. <br> <br> </p>
+                        </div>
+                        <div class="expandable-section">
+                            <h3 class="expandable-heading"> Shuttle diplomacy <br> <br> </h3>
+                            <p class="expandable-content"> Sometimes if there are no actual negotiations or face-to-face talks taking place, the mediator might engage in ‘shuttle diplomacy’ which means the mediator works with each conflict party individually to create a commonly accepted draft resolving disputes. In this context, it is important that women are either part of the delegations or of separate women’s groups which are also ‘shuttled to’ by the mediator.<br> <br> </p>
+                        </div>
+                        <div class="expandable-section">
+                            <h3 class="expandable-heading"> Confidence building measures <br> <br> </h3>
+                            <p class="expandable-content"> Confidence-building measures can be initiated by mediators to reduce violence and increase trust, goodwill and commitment between conflict parties. They are meant to deliver some of the peace dividend without requiring the difficult upfront concessions involved in a peace process. Due to women’s practical experiences and local knowledge, they can recommend effective measures to build confidence within their communities.<br> <br> </p>
+                        </div>
+                        <div class="expandable-section">
+                            <h3 class="expandable-heading"> Gendered risk assessments <br> <br> </h3>
+                            <p class="expandable-content"> A gendered risk assessment evaluates within a certain context, the risks and vulnerabilities which affect different genders unequally in order to anticipate potential gendered impacts of decisions and actions. Gendered inequalities, special needs and perspectives need to be identified and analysed. <br> <br> </p>
+                        </div>
+                        <div class="expandable-section">
+                            <h3 class="expandable-heading"> Support structures <br> <br> </h3>
+                            <p class="expandable-content"> Support structures provide technical advice and training as well as capacity building and coaching to groups who face structural obstacles to their participation in a high-level process (especially women).  Support can include: providing comparative examples, understanding the effects of process design features (e.g. how different approaches to decision making will affect women), and anticipating the gender implications of agenda topics. Support mechanisms can also help women and others to affirm their right to participate, to understand their assets and contributions, and gain the confidence to voice their expertise and solutions (especially in a context that might be hostile towards women's participation). <br> <br> </p>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="rectanglecard" id="cardYes.3">
+                <h2> (2) During process </h2>
+                <p class="cards-paragraph-style"> <br> The second phase is marked by the setting of a negotiation agenda, which defines the range of issues that will be up for discussion, and the beginning of negotiations in earnest. Negotiations are indicated by high-level, usually publicly declared, meetings between government officials and members of non-state armed groups (in the case of non-international armed conflict).
+                </p>
+            </div>
+
+            <div class="rectanglecard" id="cardYes.3.1">
+                <h2> What interventions are relevant during a peace process? <br> <br>  </h2>
+                <div class="left-aligned-text" display="block">
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading">Consultations <br> <br> </h3>
+                        <p class="expandable-content"> Consultations aggregate and summarise the opinion or experience of a group. Consultations can help negotiators to understand the causes of the conflict, public opinion about the prospect of negotiations or the ongoing negotiations, as well as the issues the group consulted would like to see in the peace agreement. Consultations can be conducted by some or all of the parties to the negotiations, by the mediator, by working groups or committees, or by outside actors such as observer missions. These consultations are often unofficial or conducted on an ad hoc basis; however, sometimes consultations are officially incorporated into the negotiation structure. <br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading">Direct representation <br> <br> </h3>
+                        <p class="expandable-content"> Direct representation at the negotiation table refers to participation by people other than members of government or armed groups (e.g. opposition political parties, members of the public, civil society organisations or representatives, clergy or religious leaders, traditional leaders, business leaders, members of the media) in formal, high-level (Track 1) negotiations. They may participate as members of the negotiation delegations (the state, non-state armed groups or their political representatives) or as members of a separate delegation (e.g. a bipartisan women’s delegation). <br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading">Inclusive commissions <br> <br> </h3>
+                        <p class="expandable-content"> Inclusive commissions are quasi-bureaucratic bodies created to fulfil an administrative or political function in a peace or political reform process. There are generally three types of commissions: those established to prepare and conduct peace or political reform processes, postagreement commissions (e.g. transitional justice mechanisms, ceasefire monitoring, constitution-drafting), and permanent commissions that endure in the long-term (e.g. human rights commissions). <br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading"> Public decision-making <br> <br> </h3>
+                        <p class="expandable-content"> Public decision-making generally takes the form of an election or a referendum. It can provide democratic legitimacy either to the continuation or outcome of the process, or the implementation of the agreement that has resulted from it. Public decision-making offers women an opportunity for participation.<br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading"> Mass action <br> <br> </h3>
+                        <p class="expandable-content"> Mass action is a form of politics that takes place outside of formal institutions. Mass action can take the form of public demonstrations, street protests, or uprisings involving a large number of people before, during, or after the negotiations. They can be an instrument for the public to influence power holders, particularly when used in combination with social media and mass media. <br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading"> Transfer and advocacy <br> <br> </h3>
+                        <p class="expandable-content"> Transfer and advocacy strategies aim to ensure that inputs from groups and individuals outside the official negotiations are incorporated into negotiations (and agreements). Mechanisms for transfer may include direct or indirect exchange of information with mediators, advisors, negotiators, including amongst conflict parties (directly or indirectly) through meetings or workshops. Advocacy strategies can include public protest, media outreach and lobbying. <br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading"> Support structures <br> <br> </h3>
+                        <p class="expandable-content"> Support structures provide technical advice and training as well as capacity building and coaching to groups who face structural obstacles to their participation in a high-level process (especially women).  Support can include: providing comparative examples, understanding the effects of process design features (e.g. how different approaches to decision making will affect women), and anticipating the gender implications of agenda topics. Support mechanisms can also help women and others to affirm their right to participate, to understand their assets and contributions, and gain the confidence to voice their expertise and solutions (especially in a context that might be hostile towards women's participation). <br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading"> Observer status <br> <br> </h3>
+                        <p class="expandable-content"> Observer status allows certain groups and individuals to be present during negotiations (some or all sessions), but does not entail decision-making power and usually also restricts them from formal speaking time. Observer status is often used to involve relevant actors  who do not have a seat at the negotiation table, such as civil society or international actors. Observers may act as “watchdogs”, advise mediators, and maintain pressure on conflict parties to reach an agreement.<br> <br> </p>
                     </div>
                 </div>
-    </div>
-
-    <div class="flowchart-container">
-
-        <div class="circlecard" id="element1">
-            <div class="circlecard-inner" >
-                <h2> Yes </h2>
             </div>
-        </div>
-        <div class="circlecard" id="element2">
-            <div class="circlecard-inner">
-                <h2> Maybe </h2>
+
+            <div class="rectanglecard" id="cardYes.4">
+                <h2> (3) Post-process </h2>
+                <p class="cards-paragraph-style"> <br> After an agreement addressing the major issues in the armed conflict and committing the parties to a ceasefire has been produced, the process moves into the implementation phase. In this phase, the parties attempt to implement the provisions of the agreement, while remaining committed to the peaceful settlement. Implementation is characterized by increased attention to issues such as demobilization, democratization and human rights,  as well as justice for crimes committed during the armed conflict.
+                </p>
             </div>
-        </div>
-        <div class="circlecard" id="element3">
-            <div class="circlecard-inner">
-            <h2> No </h2>
+            <div class="rectanglecard" id="cardYes.4.1">
+                <h2> What interventions are relevant after the process? <br> <br>  </h2>
+                <div class="left-aligned-text" display="block">
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading">Inclusive commissions <br> <br> </h3>
+                        <p class="expandable-content"> Inclusive commissions are quasi-bureaucratic bodies created to fulfil an administrative or political function in a peace or political reform process. There are generally three types of commissions: those established to prepare and conduct peace or political reform processes, postagreement commissions (e.g. transitional justice mechanisms, ceasefire monitoring, constitution-drafting), and permanent commissions that endure in the long-term (e.g. human rights commissions). <br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading"> Mass action <br> <br> </h3>
+                        <p class="expandable-content"> Mass action is a form of politics that takes place outside of formal institutions. Mass action can take the form of public demonstrations, street protests, or uprisings involving a large number of people before, during, or after the negotiations. They can be an instrument for the public to influence power holders, particularly when used in combination with social media and mass media. <br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading"> Monitoring <br> <br> </h3>
+                        <p class="expandable-content"> Monitoring involves the collection of information about a phenomenon of interest, usually to feed into a verification process or as an advocacy tool. Monitoring data may derive from the parties to an agreement, a specialised observer team located on the ground, reporting by citizens, as well as technological surveillance (aerial surveys or emplaced sensors). Monitoring allows all parties to evaluate the progress of agreed implementation plans and helps to identify opportunities and difficulties in implementing a peace agreement. It thus creates the preconditions for finding solutions. <br> <br> </p>
+                    </div>
+                    <div class="expandable-section">
+                        <h3 class="expandable-heading"> Verification <br> <br> </h3>
+                        <p class="expandable-content"> Verification is the process of using monitoring information to evaluate the compliance of relevant parties with an agreement. It aims to detect violations of agreements, as well as to deter potential violations, raising the expected costs of non-compliance by increasing the risk of exposure and possible sanction. Verification also provides compliant parties with the opportunity to credibly demonstrate their compliance, and helps to build trust. <br> <br> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="rectanglecard" id="cardMaybe.1">
+                <h2> What are the types of near-processes? </h2>
+                <p class="cards-paragraph-style"> <br> It can be difficult to determine whether a peace process exists and whether it counts as track 1 or track 2. Some common areas of ambiguity are around: </p>
+                <div class="left-aligned-text">
+                    <br>(1) Political processes in conflict-affected states that do not conform to the standard model of a peace process.  <br>(2) Processes that have stalled and may or may not be defunct.  <br>(3) Conflict resolution attempts that may or may not rise to the level of a peace process.
+                </div>
+            </div>
+            <!--    -->
+            <div class="rectanglecard" id="cardMaybe.2">
+                <h2> "Political" process </h2>
+                <p class="cards-paragraph-style"> <br> Instead of Comprehensive Peace Agreement negotiations, some states confronted with major armed conflict are opting for inclusive political dialogue processes that aim to address these issues without giving veto power to non-state armed groups. <br>
+                    Some of these states are opting for CPA-style security talks (e.g. “peace-fires”), combined with inclusive political dialogue processes (e.g. Ethiopia since 2022). <br><br>
+                    Other states have opted for political dialogue alone, in the hope the armed conflict will wither away when deprived of its animating grievances. These types of processes are currently not considered peace processes by the RRW for funding purposes.<br><br>
+                    At the more organised end of the composite peace and transition process spectrum, we find processes that strategically divide the major issues at stake in the conflict into packages or “tracks”, and split these among different forums, usually featuring different parties.<br>
+
+                </p>
+            </div>
+            <div class="rectanglecard" id="cardMaybe.3">
+                <h2> Stalled process </h2>
+                <p class="cards-paragraph-style"> <br> It is common for peace processes to go through setbacks and reversals. Some of these setbacks can stall the process for months or years. In these circumstances, it can be hard to determine whether a process is considered active. <br><br>
+
+                </p>
+            </div>
+            <div class="rectanglecard" id="cardMaybe.4">
+                <h2> Local or partial process </h2>
+                <p class="cards-paragraph-style"> <br> Many conflict-affected states feature more than one non-state armed actor. Many of these conflicts affect only part of the country. This can introduce two confusing elements into an assessment of whether a project counts as track 1 or track 2. <br><br>
+                    First, if there is a clear track 1 or 2 process in one part of the country, but the proposed project addresses a conflict in another part of the country, or does not address the national process, it is unlikely to be eligible. <br><br>
+                    Second, non-state armed actors often conclude peace agreements amongst themselves. These generally look quite different to national peace agreements and may look more like elaborate ceasefire agreements than programs of major political reform. These types of process are generally not considered track 1 or 2.
+                </p>
+            </div>
+            <div class="rectanglecard" id="cardNo.1">
+                <h2> Are there factors that create a conducive environment for peace? </h2>
+                <p class="cards-paragraph-style">  <br>  If there is no active track 1 or track 2 peace process, there may nevertheless be opportunities to act to create a conducive environment for peace. <br>
+                </p>
+            </div>
+            <div class="rectanglecard" id="cardNo.2">
+                <h2> There ARE conducive factors for peace </h2>
+                <p class="cards-paragraph-style"> <br>  <br><br>   </p>
+            </div>
+            <div class="rectanglecard" id="cardNo.3">
+                <h2> There MIGHT BE conducive factors for peace </h2>
+                <p class="cards-paragraph-style"> <br>  </p>
+            </div>
+            <div class="rectanglecard" id="cardNo.4">
+                <h2> There AREN'T conducive factors for peace </h2>
+                <p class="cards-paragraph-style"> <br>  </p>
             </div>
         </div>
     </div>
 </div>
-<!--</div>-->
-</body>
+</body> <!-- Closing body tag here -->
 </html>

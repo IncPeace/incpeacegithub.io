@@ -1,35 +1,123 @@
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    border: 0 none;
+
+    -webkit-transition: all ease .4s;
+    -moz-transition: all ease .4s;
+    transition: all ease .4s;
+}
+
+html,
 body {
-    background-color: #E76485; /* Background color for the entire page */
-    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+
+    /*background: RGBA(0, 58, 97, 1);*/
+
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 12px;
+}
+
+/* Cards paragraph style */
+.cards-paragraph-style {
+    font-size: 14px;
+    color: black
+}
+
+/*h1 {*/
+/*    padding-top: 40px;*/
+
+/*    color: #000000;*/
+/*    text-align: center;*/
+/*    font-size: 1.8rem;*/
+
+/*    text-shadow: rgba(0,0,0,0.6) 1px 0, rgba(0,0,0,0.6) 1px 0, rgba(0,0,0,0.6) 0 1px, rgba(0,0,0,0.6) 0 1px;*/
+/*}*/
+
+.expandable-section {
+    cursor: pointer;
+}
+
+.expandable-content {
+    display: none;
 }
 
 h1 {
+    padding-top: 40px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500; /* You can specify different font weights as needed */
     color: #000000;
+    font-size: 20px;
 }
 h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300; /* You can specify different font weights as needed */
     color: #000000;
+    font-size: 16px;
 }
-
+h3 {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; /* You can specify different font weights as needed */
+    color: #000000;
+    font-size: 14px;
+}
 p {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: #000000;
 }
 
-/*create a class shared by all cards */
+.left-aligned-text {
+    display : inline-block;
+    text-align: left; /* Left-align the content inside this wrapper */
+    font-size: 14px;
+}
+
+.right-aligned-text {
+    display : block;
+    text-align: left; /* Left-align the content inside this wrapper */
+    font-size: 10px;
+}
+
+.expandable-section {
+    cursor: pointer;
+    display: block;
+}
+
+.expandable-content {
+    display: none;
+}
+
+
+/*.transparent-50 {*/
+/*    opacity: 100;*/
+/*}*/
+/*.transparent-0 {*/
+/*    opacity: 0;*/
+/*}*/
 
 
 .container {
-    position: relative;
-    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column; /* Ensure elements are stacked vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 .preamblecontainer{
-    margin: 5vh 40vw 5vh 5vw; /* Margin values (top right bottom left) as percentages */
+    margin: 5vh 5vw 5vh 2vw; /* Margin values (top right bottom left) as percentages */
+    flex : 1 ;
     /*width: 97.5vw; */
     /*height: 97.5vw;*/
     background-color: whitesmoke;
@@ -40,117 +128,207 @@ p {
     line-height: 1.5; /* Increase line spacing to 1.5 times the font size */
 }
 
-.flowchart-super-container {
-    margin-top: 0px; /* Increased margin from the top */
-    background-color: whitesmoke;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    text-align: center; /* Center text horizontally */
-}
 
-.flowchart-container {
-    margin-top: 0px; /* Increased margin from the top */
+
+.toprectanglecard {
     background-color: whitesmoke;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    text-align: center; /* Center text horizontally */
+    border: 2px solid #E76485; /* Border properties */
+    padding: 10px; /* Optional padding for spacing */
+    border-radius: 15px; /* Adjust the value to control the roundness of the corners */
+    margin-bottom: 40px; /* Adjust the margin value to control the gap between stacked elements */
+    /* This code is for the animated appearance of the hidden text elements*/
+    /*display : none;*/
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
 }
 
 .rectanglecard {
-    width: 15vw; /* Set the width and height to make it a circle */
-    height: 7.5vw;
-    /*width: 200px; !* Set the width and height to make it a circle *!*/
-    /*height: 200px;*/
+    /*width: 30vw; !* Set the width and height to make it a circle *!*/
+    /*height: 7.5vw;*/
+    /*width: 400px; !* Set the width and height to make it a circle *!*/
+    /*height: 100px;*/
+    /*position: absolute;*/
     background-color: whitesmoke;
+    border: 2px solid #E76485; /* Border properties */
+    padding: 10px; /* Optional padding for spacing */
     border-radius: 15px; /* Adjust the value to control the roundness of the corners */
-    padding: 20px; /* Adjust the padding as needed */
-    margin: 0; /* Reset margin to zero */
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    border: 2px solid #E76485; /* Add border color and width */
-}
+    margin-bottom: 40px; /* Adjust the margin value to control the gap between stacked elements */
+    display: none;
 
-.rectanglecard-inner {
-    background-color: whitesmoke;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.6); /* Optional: Add a shadow for depth */
-    width: 80%; /* Set width and height to 100% for a perfect circle */
-    height: 80%;
-    border-radius: 10px; /* Adjust the value for inner rectangle roundness */
-    padding: 20px; /* Adjust the padding as needed */
-    margin: 0; /* Reset margin to zero */
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    text-align: center; /* Center text horizontally */
-    border: 6px solid #E76485; /* Add border color and width */
-}
+    /* This code is for the animated appearance of the hidden text elements*/
+    /*display : none;*/
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 
-.circlecards {
-    display: flex;
-    justify-content: space-between; /* Evenly space the circle cards */
-    /*width: 100%;*/
-    flex-direction: column;
-    align-items: center;
-    margin: 15vw; /* Spacing between rectangle card and circle cards */
-}
+    /*top: 0; !* Initial top position *!*/
+    /*left: 100%; !* Start off-screen to the right *!*/
+    /*opacity: 0; !* Initially hidden *!*/
+    /*transition: left 0.3s ease, opacity 0.3s ease;*/
 
-.circlecard {
-    width: 7.5vw; /* Set the width and height to make it a circle */
-    height: 7.5vw;
-    /*width: 200px; !* Set the width and height to make it a circle *!*/
-    /*height: 200px;*/
-    background-color: whitesmoke;
-    border-radius: 50%; /* Use 50% border-radius to make it a circle */
-    padding: 20px; /* Adjust the padding as needed */
-    margin: 5vw;
-    /*margin-top: 20px; !* Spacing between circle cards *!*/
-    /*box-sizing: border-box;*/
-
-    display: flex; /* Use flexbox */
-    flex-direction: column;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    border: 2px solid #E76485; /* Add border color and width */
-}
-
-.circlecard-inner {
-    background-color: whitesmoke;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.6); /* Optional: Add a shadow for depth */
-    width: 6.5vw; /* Set the width and height to make it a circle */
-    height: 6.5vw;
-    /*width: 100%; !* Set width and height to 100% for a perfect circle *!*/
-    /*height: 100%;*/
-    border-radius: 50%;
     /*padding: 20px; !* Adjust the padding as needed *!*/
-    margin: 0; /* Reset margin to zero */
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    text-align: center; /* Center text horizontally */
-    border: 6px solid #E76485; /* Add border color and width */
+    /*margin: 0; !* Reset margin to zero *!*/
+    /*display: flex; !* Use flexbox *!*/
+
+    /*!*justify-content: center; !* Center content horizontally *!*!*/
+    /*!*align-items: center; !* Center content vertically *!*!*/
+    /*border: 2px solid #E76485; !* Add border color and width *!*/
 }
 
+ /*Stuff from my old file ends here. Stuff from https://codepen.io/joellesenne/pen/KKzVMW starts below*/
 
-.line-svg {
+.split-container{
+    display: flex;
+    align-items: stretch;
+    max-width: 100vw;
+    overflow: auto; /* Enable scrolling if content overflows */
+}
+
+.hidden-text-container {
+    margin: 5vh 5vw 0vh 2vw; /* Margin values (top right bottom left) as percentages */
+    flex: 1; /* Takes up 50% of the container width */
+    padding: 0px; /* Add some padding for spacing */
+    background-color: #ffffff; /* Optional background color */
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 40vw;
+    /*overflow: auto; !* Enable horizontal scrolling if needed *!*/
+}
+
+.nav-container {
+    margin: 0vh 1vw 0vh 2vw; /* Margin values (top right bottom left) as percentages */
+    flex: 1; /* Takes up 50% of the container width */
+    padding: 5px; /* Add some padding for spacing */
+    background-color: #f0f0f0; /* Optional background color */
+    /*align-items: center; !* Center content vertically *!*/
+    display: flex;
+
+    /*overflow: auto; !* Enable scrolling if content overflows *!*/
+    max-width: 60vw;
+}
+
+.nav {
+    margin: 1px auto; /* This seems to affect the position of the entire flowchart on the screen */
+    width: 80vw;
+    min-height: auto;
+    display: flex;
+    justify-content: center ; /* Center content horizontally */
+}
+
+.nav ul {
+    position: relative;
+    padding-top: 60px; /* This affects the vertical distribution of the flowchart */
+}
+
+.nav li {
+    position: relative;
+    padding: 20px 3px 10px 3px; /* This affects the horizontal distribution of the flowchart */
+    /*padding: 20px 3px 0 3px;*/
+    float: left;
+    display: inline-block;
+    text-align: center;
+    list-style-type: none;
+}
+
+.nav li::before, .nav li::after{
+    content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    right: 50%;
+    width: 50%;
+    height: 15px; /* This seems to alter the size of the bit that connects after the bend in the flowchart to the top of the next bubble */
+    border-top: 1px solid #564e4f;
 }
 
-line {
-    position: absolute;
-    stroke: #000; /* Line color */
-    stroke-width: 4px; /* Line width */
-    z-index: 2; /* Place the line behind other elements */
+.nav li::after{
+    left: 50%;
+    right: auto;
+
+    border-left: 1px solid #564e4f;
 }
 
-/*#line {*/
-/*    position: absolute;*/
-/*    background-color: #000;*/
-/*    z-index: -1; !* Place the line behind other elements *!*/
+.nav li:only-child::after, .nav li:only-child::before {
+    content: '';
+    display: none;
+}
+
+.nav li:only-child{ padding-top: 0;}
+.nav li:first-child::before, .nav li:last-child::after{
+    border: 0 none;
+}
+
+.nav li:last-child::before{
+    border-right: 1px solid #564e4f;
+    border-radius: 0 5px 0 0;
+}
+
+.nav li:first-child::after{
+    border-radius: 5px 0 0 0;
+}
+.nav ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 1px solid #564e4f;
+    width: 0;
+    height: 10px; /* this changes the straight line between elements */
+}
+
+.nav li a{
+    display: inline-block;
+    padding: 5px 10px;
+
+    border-radius: 5px;
+    /*border: 1px solid #cccccc;*/
+    border: 2px solid #E76485; /* Add border color and width */
+
+    outline: 2px solid #f0f0f0;     /* Add an outline for the second border */
+    outline-offset: 2px;     /* Increase the gap between outline and border */
+
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    font-family: arial, verdana, tahoma;
+    font-size: 14px;
+}
+
+/* Default transparency for second-tier li elements */
+.nav ul li ul li {
+    /*display : none;*/
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav ul li ul li ul li {
+    /*display : none;*/
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/*.nav ul li ul li ul li.display {*/
+/*    display : block;*/
+/*}*/
+
+/* Add a class to control transparency */
+.nav ul li ul li.transparent {
+    opacity: 1;
+}
+
+.rectanglecard.transparent {
+    opacity: 1;
+}
+
+/*.nav li a:hover, .nav li a:hover+ul li a {*/
+/*    color: #000;*/
+/*    background: #c8e4f8;*/
+/*    border: 1px solid #94a0b4;*/
+/*}*/
+
+/*.nav li a:hover+ul li::after,*/
+/*.nav li a:hover+ul li::before,*/
+/*.nav li a:hover+ul::before,*/
+/*.nav li a:hover+ul ul::before{*/
+/*    content: '';*/
+/*    border-color: #d400ff;*/
 /*}*/
