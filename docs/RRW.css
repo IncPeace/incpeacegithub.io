@@ -92,6 +92,7 @@ p {
 }
 
 .trigger-link {
+    /*nothing to see here*/
     display: inline;
     color: #E76485; /* Change text color to your desired color */
     text-decoration: underline;
@@ -129,7 +130,7 @@ p {
     display: block;
     visibility: hidden;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 10px solid #ccc;
     padding: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     z-index: 1;
@@ -225,7 +226,7 @@ p {
     /*border: 2px solid #E76485; !* Add border color and width *!*/
 }
 
- /*Stuff from my old file ends here. Stuff from https://codepen.io/joellesenne/pen/KKzVMW starts below*/
+/*Stuff from my old file ends here. Stuff from https://codepen.io/joellesenne/pen/KKzVMW starts below*/
 
 .split-container{
     display: flex;
