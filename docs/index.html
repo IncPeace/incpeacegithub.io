@@ -39,6 +39,7 @@
 
     </div>
 
+
     <!--    <div class="flowchart-super-container">-->
     <div class="right-aligned-text">  If the flowchart looks jumbled, it is because it was designed for a larger screen. Try zooming out.</div>
     <div class="split-container">
@@ -47,11 +48,11 @@
                 <ul>
                     <li id="element0">
                         <!--                    toggleDisplayOn(['card1']);toggleDisplayOff(['card2']);toggleAlignment();-->
-                        <a href="javascript:void(0);" onclick="toggleDisplayOn(['card1']);toggleDisplayOff(getElementsWithPrefixExcluding('card','card1'));toggleTransparencyOn(['card1','element1','element2','element3']);toggleTransparencyOff(['card2'])">Is there a peace process?</a> <!--    *toggleDisplay(['element1','element2','element3']);-->
+                        <a href="javascript:void(0);" onclick="toggleDisplayOn(['card1']);toggleDisplayOff([getElementsWithPrefixExcluding('card','card1')]);toggleTransparencyOn(['card1','element1','element2','element3']);toggleTransparencyOff(['card2'])">Is there a peace process?</a> <!--    *toggleDisplay(['element1','element2','element3']);-->
                         <ul>
                             <li id="element1">
                                 <!--                            <a href="javascript:void(0);" id="yes" onclick="toggleDisplayOff(['card1','maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process','no-what-factors','no-yes','no-no']);toggleDisplayOn(['element4','yes-pre-process','yes-during-process','yes-post-process']);toggleTransparency(['card1','card2'])">Yes</a>  &lt;!&ndash;    //)&ndash;&gt;-->
-                                <a href="javascript:void(0);" id="yes" onclick="toggleDisplayOn(['cardYes.1']);toggleDisplayOff(getElementsWithPrefixExcluding('card','cardYes.1'));toggleTransparencyOff(['card1', 'maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process', 'no-what-factors','no-yes','no-no']);toggleTransparencyOn(['cardYes.1','element4','yes-pre-process','yes-during-process','yes-post-process'])">Yes</a>  <!--    //)-->
+                                <a href="javascript:void(0);" id="yes" onclick="toggleDisplayOn(['cardYes.1']);toggleDisplayOff(getElementsWithPrefixExcluding('card','cardYes.1'));toggleTransparencyOff(['card1', 'maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process', 'no-what-factors','no-yes','no-no']);toggleTransparencyOn(['cardYes.1','element4','yes-pre-process','yes-during-process','yes-post-process']);myClickHandler(getArrayofElementsWithPrefixExcluding('card','cardYes.1'))">Yes</a>  <!--    //)-->
                                 <ul>
                                     <li id="element4">
                                         <a href="javascript:void(0);">What stage?</a>
@@ -186,12 +187,15 @@
                 <h2> What interventions are relevant in the pre-process phase? <br> <br>  </h2>
                     <div class="left-aligned-text" display="block">
                         <div class="expandable-section">
-                            <h3 class="expandable-heading">Consultations <br> <br> </h3>
-                            <p class="expandable-content"> Consultations aggregate and summarise the opinion or experience of a group. They  can provide a way for negotiators and mediators to better understand the perspectives of society outside of the peace process during or prior to the process. This is a somewhat distinct issue to consultations conducted after the agreement, for example, as part of fact-finding investigations into abuses during the conflict. Consultations can help negotiators to understand the causes of the conflict, public opinion about the prospect of negotiations or the ongoing negotiations, as well as the issues the group consulted would like to see in the peace agreement. Consultations can be conducted by some or all of the parties to the negotiations, by the mediator, by working groups or committees, or by outside actors such as observer missions. These consultations are often unofficial or conducted on an ad hoc basis; however, sometimes consultations are officially incorporated into the negotiation structure. <br> <br> </p>
+                            <h3 class="expandable-heading">Consultations (click to hide) </h3>
+<!--                            <a class="subscript"> (click to hide) </a>-->
+                            <p class="expandable-content"> <br> Consultations aggregate and summarise the opinion or experience of a group. They  can provide a way for negotiators and mediators to better understand the perspectives of society outside of the peace process during or prior to the process. This is a somewhat distinct issue to consultations conducted after the agreement, for example, as part of fact-finding investigations into abuses during the conflict. Consultations can help negotiators to understand the causes of the conflict, public opinion about the prospect of negotiations or the ongoing negotiations, as well as the issues the group consulted would like to see in the peace agreement. Consultations can be conducted by some or all of the parties to the negotiations, by the mediator, by working groups or committees, or by outside actors such as observer missions. These consultations are often unofficial or conducted on an ad hoc basis; however, sometimes consultations are officially incorporated into the negotiation structure. <br> <br> </p>
+                            <a href=# class="trigger-link" data-target="pre-process-consultations-yemen"> Examples <br><br> </a>
                         </div>
                         <div class="expandable-section">
-                            <h3 class="expandable-heading">Inclusive commissions <br> <br> </h3>
-                            <p class="expandable-content"> Inclusive commissions are quasi-bureaucratic bodies created to fulfil an administrative or political function in a peace or political reform process. There are generally three types of commissions: those established to prepare and conduct peace or political reform processes, postagreement commissions (e.g. transitional justice mechanisms, ceasefire monitoring, constitution-drafting), and permanent commissions that endure in the long-term (e.g. human rights commissions). <br> <br> </p>
+                            <h3 class="expandable-heading">Inclusive commissions </h3>
+                            <p class="expandable-content"> <br> Inclusive commissions are quasi-bureaucratic bodies created to fulfil an administrative or political function in a peace or political reform process. There are generally three types of commissions: those established to prepare and conduct peace or political reform processes, postagreement commissions (e.g. transitional justice mechanisms, ceasefire monitoring, constitution-drafting), and permanent commissions that endure in the long-term (e.g. human rights commissions). <br> <br> </p>
+                            <a href=# class="trigger-link" data-target="pre-process-commissions-yemen"> Examples <br><br> </a>
                         </div>
                         <div class="expandable-section">
                             <h3 class="expandable-heading"> Mass action <br> <br> </h3>
@@ -339,6 +343,32 @@
             </div>
         </div>
     </div>
+                                                        <!--    EXAMPLES     -->
+    <!--Pre-process examples-->
+    <div class="popup-element" id="pre-process-consultations-yemen">
+        <button class="close-button" data-target="pre-process-consultations-yemen">×</button>
+        <div class="content" id="content1-A">
+            <h2> Example: pre-process consultations </h2> <br>
+            <h3> Yemen (2011-2015) </h3> <br>
+            <p> In the preparatory phase of the conference, UN Special Envoy Benomar met with a number of women’s groups. These consultations were an important opportunity for women to push for their inclusion in the Technical Preparatory Committee for the National Dialogue, which was an important precondition for women’s subsequent influence in the process. <br>
+            </p>
+<!--            <button onclick="toggleContent()">Next example</button>-->
+        </div>
+    </div>
+
+    <div class="popup-element" id="pre-process-commissions-yemen">
+        <button class="close-button" data-target="pre-process-commissions-yemen">×</button>
+        <div class="content" id="content2-A">
+            <h2> Example: pre-process inclusive commission </h2> <br>
+            <h3> Yemen (2011-2015) </h3> <br>
+            <p> Two inclusive commissions were established to prepare for the National Dialogue Conference. The first was the eight-member Liaison Committee, tasked with continuing dialogue between the various factions involved in the transition. Two members of the Liaison Committee were women: Nadia al-Sakkaf and Raqiya Humaidan. The second commission was the Technical Committee to Prepare for the Comprehensive National Dialogue Conference. Women were successful in achieving a 30 percent quota for women in the Technical Preparatory Committee. In practice, there were only six women out of 31 total members (i.e. 19 percent), but this 30 percent quota set an important precedent for subsequent bodies. Women involved in these early committees also participated in later modalities. <br>
+            </p>
+<!--            <button onclick="toggleContent()">Next example</button>-->
+        </div>
+    </div>
+
+    <!--    <div class="content" id="content2-B">This is content 2</div>-->
+    <!--    <div class="content" id="content3">This is content 3</div>-->
 </div>
 </body> <!-- Closing body tag here -->
 </html>
