@@ -1,3 +1,20 @@
+// Add an event listener to run the function when the window is resized.
+window.addEventListener("resize", checkViewportSize);
+
+// Call the function initially to check the viewport size when the page loads.
+checkViewportSize();
+
+function checkViewportSize() {
+    const windowWidth = window.innerWidth
+    if (windowWidth < 1500) {
+        // Perform an action when the viewport width is below 768 pixels
+        // You can replace the console.log with your desired action.
+        console.log("Viewport width is below 768 pixels.");
+    }
+    console.log("Viewport width is " + windowWidth.toString() + "pixels.");
+}
+
+
 function toggleTransparencyOn(elementIds) {
     elementIds.forEach((elementId) => {
         const element = document.getElementById(elementId);
@@ -170,7 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // This is my pop-up box function
-
 document.addEventListener("DOMContentLoaded", function () {
     const triggerLinks = document.querySelectorAll(".trigger-link");
     triggerLinks.forEach(function (link) {
@@ -180,25 +196,72 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                const popupElements = document.querySelectorAll(".popup-element");
-                popupElements.forEach(function (popupElement) {
-                    if (popupElement !== targetElement) {
-                        popupElement.style.visibility = "hidden";
-                        popupElement.style.display = "none";
-                    }
-                });
-
-                // Toggle the visibility of the target element
+                //                 // Toggle the visibility of the target element
                 if (targetElement.style.visibility === "hidden" || targetElement.style.visibility === "") {
                     targetElement.style.visibility = "visible";
                     targetElement.style.display = "block";
                 } else {
                     targetElement.style.visibility = "hidden";
                 }
+                const contentElements = targetElement.querySelectorAll(".content");
+                contentElements.forEach(function (contentElement, index) {
+                    const contentId = contentElement.id;
+                    if (index === 0 || contentId.includes("-1")) {
+                        contentElement.style.display = "block";
+                    } else {
+                        contentElement.style.display = "none";
+                    }
+                });
+
             }
+
+            // Hide other content elements
+            const otherContentElements = document.querySelectorAll(".content:not([id*='-1'])");
+            otherContentElements.forEach(function (contentElement) {
+                contentElement.style.display = "none";
+            });
+
+            // Hide other popup-elements
+            const popupElements = document.querySelectorAll(".popup-element");
+            popupElements.forEach(function (popupElement) {
+                if (popupElement !== targetElement) {
+                    popupElement.style.display = "none";
+                }
+            });
         });
     });
 });
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const triggerLinks = document.querySelectorAll(".trigger-link");
+//     triggerLinks.forEach(function (link) {
+//         link.addEventListener("click", function (event) {
+//             event.preventDefault(); // Prevent the default behavior of links
+//             const targetId = this.getAttribute("data-target");
+//             const targetElement = document.getElementById(targetId);
+//
+//             if (targetElement) {
+//                 const popupElements = document.querySelectorAll(".popup-element");
+//                 popupElements.forEach(function (popupElement) {
+//                     if (popupElement !== targetElement) {
+//                         popupElement.style.visibility = "hidden";
+//                         popupElement.style.display = "none";
+//                     }
+//                 });
+//
+//                 // Toggle the visibility of the target element
+//                 if (targetElement.style.visibility === "hidden" || targetElement.style.visibility === "") {
+//                     targetElement.style.visibility = "visible";
+//                     targetElement.style.display = "block";
+//                 } else {
+//                     targetElement.style.visibility = "hidden";
+//                 }
+//             }
+//         });
+//     });
+// });
 
 //  This is my close box function
 
@@ -249,6 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function toggleContent(setNumber) {
     let currentIndex = 1; // Initialize with the first content
+    console.log(`Button clicked!`);
 
     return function () {
         const currentContent = document.getElementById(`content${setNumber}-${currentIndex}`);
@@ -257,29 +321,8 @@ function toggleContent(setNumber) {
         currentIndex = currentIndex === 3 ? 1 : currentIndex + 1; // Toggle to next content or wrap to the first
         const nextContent = document.getElementById(`content${setNumber}-${currentIndex}`);
         nextContent.style.display = "block"; // Show the next content
+
+        console.log(`Button clicked, targetId: ${setNumber} - ${currentIndex} `);
     };
 }
 
-// Create toggle functions for different sets
-// const toggleSet1 = toggleContent(1);
-// const toggleSet2 = toggleContent(2);
-// const toggleSet3 = toggleContent(3);
-// const toggleSet4 = toggleContent(4);
-// const toggleSet5 = toggleContent(5);
-// const toggleSet6 = toggleContent(6);
-
-// Initial display
-// document.getElementById("content1-A").style.visibility = "hidden"; // Set initial content for set 1
-// document.getElementById("content2-A").style.visibility = "hidden"; // Set initial content for set 2
-// document.getElementById("content3-A").style.visibility = "hidden"; // Set initial content for set 1
-// document.getElementById("content4-A").style.visibility = "hidden"; // Set initial content for set 2
-// document.getElementById("content5-A").style.visibility = "hidden"; // Set initial content for set 1
-// document.getElementById("content6-A").style.visibility = "hidden"; // Set initial content for set 2
-
-
-// document.getElementById("content1-A").style.display = "block"; // Set initial content for set 1
-// document.getElementById("content2-A").style.display = "block"; // Set initial content for set 2
-// document.getElementById("content3-A").style.display = "block"; // Set initial content for set 1
-// document.getElementById("content4-A").style.display = "block"; // Set initial content for set 2
-// document.getElementById("content5-A").style.display = "block"; // Set initial content for set 1
-// document.getElementById("content6-A").style.display = "block"; // Set initial content for set 2

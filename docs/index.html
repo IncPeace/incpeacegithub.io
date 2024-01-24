@@ -48,7 +48,7 @@
                 <ul>
                     <li id="element0">
                         <!--                    toggleDisplayOn(['card1']);toggleDisplayOff(['card2']);toggleAlignment();-->
-                        <a href="javascript:void(0);" onclick="toggleDisplayOn(['card1']);toggleDisplayOff([getElementsWithPrefixExcluding('card','card1')]);toggleTransparencyOn(['card1','element1','element2','element3']);toggleTransparencyOff(['card2'])">Is there a peace process?</a> <!--    *toggleDisplay(['element1','element2','element3']);-->
+                        <a href="javascript:void(0);" onclick="toggleDisplayOn(['card1']);toggleDisplayOff(getElementsWithPrefixExcluding('card','card1'));toggleTransparencyOn(['card1','element1','element2','element3']);toggleTransparencyOff(['card2'])">Is there a peace process?</a> <!--    *toggleDisplay(['element1','element2','element3']);-->
                         <ul>
                             <li id="element1">
                                 <!--                            <a href="javascript:void(0);" id="yes" onclick="toggleDisplayOff(['card1','maybe-non-inclusive-process','maybe-stalled-process','maybe-coopted-process','no-what-factors','no-yes','no-no']);toggleDisplayOn(['element4','yes-pre-process','yes-during-process','yes-post-process']);toggleTransparency(['card1','card2'])">Yes</a>  &lt;!&ndash;    //)&ndash;&gt;-->
@@ -203,7 +203,8 @@
                         </div>
                         <div class="expandable-section">
                             <h3 class="expandable-heading"> Problem solving workshops <br> <br> </h3>
-                            <p class="expandable-content"> Problem-solving workshops provide a  facilitated space for discussion and dialogue . They are often convened where peace talks are stalled or not yet started, with the goal of informally, confidentially exchanging perspectives, overcoming grievances, and formulating joint positions that may feed into the official negotiations. <br> <br> </p>
+                            <p class="expandable-content"> Problem-solving workshops provide a facilitated space for discussion and dialogue. They are often convened where peace talks are stalled or not yet started, with the goal of informally, confidentially exchanging perspectives, overcoming grievances, and formulating joint positions that may feed into the official negotiations. <br> <br> </p>
+                            <a href=# class="trigger-link" data-target="pre-process-workshops"> Examples <br><br> </a>
                         </div>
                         <div class="expandable-section">
                             <h3 class="expandable-heading"> Shuttle diplomacy <br> <br> </h3>
@@ -298,7 +299,7 @@
                 <h2> What are the types of near-processes? </h2>
                 <p class="cards-paragraph-style"> <br> It can be difficult to determine whether a peace process exists and whether it counts as track 1 or track 2. Some common areas of ambiguity are around: </p>
                 <div class="left-aligned-text">
-                    <br>(1) Political processes in conflict-affected states that do not conform to the standard model of a peace process.  <br>(2) Processes that have stalled and may or may not be defunct.  <br>(3) Conflict resolution attempts that may or may not rise to the level of a peace process.
+                    <br>(1) Political processes in conflict-affected states that do not conform to the standard model of a peace process.  <br>(2) Processes that have stalled and may or may not ever resume.  <br>(3) Conflict resolution attempts that may or may not rise to the level of a peace process.
                 </div>
             </div>
             <!--    -->
@@ -308,7 +309,6 @@
                     Some of these states are opting for CPA-style security talks (e.g. “peace-fires”), combined with inclusive political dialogue processes (e.g. Ethiopia since 2022). <br><br>
                     Other states have opted for political dialogue alone, in the hope the armed conflict will wither away when deprived of its animating grievances. These types of processes are currently not considered peace processes by the RRW for funding purposes.<br><br>
                     At the more organised end of the composite peace and transition process spectrum, we find processes that strategically divide the major issues at stake in the conflict into packages or “tracks”, and split these among different forums, usually featuring different parties.<br>
-
                 </p>
             </div>
             <div class="rectanglecard" id="cardMaybe.3">
@@ -347,7 +347,7 @@
     <!--Pre-process examples-->
     <div class="popup-element" id="pre-process-consultations-yemen">
         <button class="close-button" data-target="pre-process-consultations-yemen">×</button>
-        <div class="content" id="content1-A">
+        <div class="content" id="content1-1">
             <h2> Example: pre-process consultations </h2> <br>
             <h3> Yemen (2011-2015) </h3> <br>
             <p> In the preparatory phase of the conference, UN Special Envoy Benomar met with a number of women’s groups. These consultations were an important opportunity for women to push for their inclusion in the Technical Preparatory Committee for the National Dialogue, which was an important precondition for women’s subsequent influence in the process. <br>
@@ -355,10 +355,10 @@
 <!--            <button onclick="toggleContent()">Next example</button>-->
         </div>
     </div>
-
+    <!--    Pre-process commissions -->
     <div class="popup-element" id="pre-process-commissions-yemen">
         <button class="close-button" data-target="pre-process-commissions-yemen">×</button>
-        <div class="content" id="content2-A">
+        <div class="content" id="content2-1">
             <h2> Example: pre-process inclusive commission </h2> <br>
             <h3> Yemen (2011-2015) </h3> <br>
             <p> Two inclusive commissions were established to prepare for the National Dialogue Conference. The first was the eight-member Liaison Committee, tasked with continuing dialogue between the various factions involved in the transition. Two members of the Liaison Committee were women: Nadia al-Sakkaf and Raqiya Humaidan. The second commission was the Technical Committee to Prepare for the Comprehensive National Dialogue Conference. Women were successful in achieving a 30 percent quota for women in the Technical Preparatory Committee. In practice, there were only six women out of 31 total members (i.e. 19 percent), but this 30 percent quota set an important precedent for subsequent bodies. Women involved in these early committees also participated in later modalities. <br>
@@ -366,7 +366,47 @@
 <!--            <button onclick="toggleContent()">Next example</button>-->
         </div>
     </div>
-
+<!--    Pre-process workshops -->
+    <div class="popup-element" id="pre-process-workshops">
+        <button class="close-button" data-target="pre-process-workshops">×</button>
+        <div class="content" id="content4-1">
+            <h2> Example: pre-process problem-solving workshop </h2> <br>
+            <h3> Democratic Republic of the Congo (2001-2003) </h3> <br>
+            <p> Traditionally, women in the DRC are excluded from the political arena. To address this issue in the context of the peace process, a high-level problem-solving workshop was organised before the negotiations in Sun City, particularly aimed to increase the number of women representatives in the upcoming negotiations. Initially, the women tended to represent their own groups or the position of their delegation. However, positions softened as the workshop progressed and the women increasingly abandoned their party alliances and started to work together for a common agenda. <br>
+                <br> <br>
+            </p>
+        </div>
+        <div class="content" id="content4-2">
+            <h2> Example: pre-process problem-solving workshop </h2> <br>
+            <h3> Tajikistan (1997) </h3> <br>
+            <p> An inter-Tajik dialogue began in Moscow before the official UN-sponsored negotiations started and these informal deliberations between representatives of the government, opposition and independent members of the intelligentsia continued during the implementation phase. The forum was credited for encouraging the formation of a unified platform for the opposition during the negotiations. Whilst the role and impact of the forum during the implementation phase is unclear, it was found to have fostered peacebuilding initiatives outside the official realm, and it later founded a permanent Public Committee for the Promotion of Democratic Processes. Given the generally exclusionary nature of both the Tajik negotiation and implementation process, the influence the included actors may have had on high-level decision-making through these workshops remains doubtful.<br>
+            </p>
+        </div>
+        <button class="button-container" onclick="toggleContent(4)" id="pre-process-workshops-button">
+            <br> Next example
+            <span class="arrow"></span>
+        </button>
+    </div>
+<!--    <div class="popup-element" id="pre-process-workshop-Tajikistan ">-->
+<!--        <button class="close-button" data-target="pre-process-workshop-Tajikistan ">×</button>-->
+<!--        <div class="content" id="content4-2">-->
+<!--            <h2> Example: pre-process problem-solving workshop </h2> <br>-->
+<!--            <h3> Tajikistan (1997) </h3> <br>-->
+<!--            <p> An inter-Tajik dialogue began in Moscow before the official UN-sponsored negotiations started and these informal deliberations between representatives of the government, opposition and independent members of the intelligentsia continued during the implementation phase. The forum was credited for encouraging the formation of a unified platform for the opposition during the negotiations. Whilst the role and impact of the forum during the implementation phase is unclear, it was found to have fostered peacebuilding initiatives outside the official realm, and it later founded a permanent Public Committee for the Promotion of Democratic Processes. Given the generally exclusionary nature of both the Tajik negotiation and implementation process, the influence the included actors may have had on high-level decision-making through these workshops remains doubtful.<br>-->
+<!--            </p>-->
+<!--                        <button onclick="toggleContent(3)">Next example</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="popup-element" id="pre-process-workshop-Philippines  ">-->
+<!--        <button class="close-button" data-target="pre-process-workshop-Philippines  ">×</button>-->
+<!--        <div class="content" id="content4-3">-->
+<!--            <h2> Example: pre-process inclusive commission </h2> <br>-->
+<!--            <h3> Philippines (2014) </h3> <br>-->
+<!--            <p> In the case of the Bangsamoro peace process, informal discussions through the programme Consolidation for Peace for Mindanao were organized by Japan and with a Malaysian university during the negotiations, and a further meeting regarding implementation took place in 2014. These meetings allowed MILF representatives to meet with members of independent commissions, the provincial government, aid agencies, NGOs and academics to discuss matters relating to development, governance structures and normalization. The importance of the meetings for the implementation process remains unclear. <br>-->
+<!--            </p>-->
+<!--                        <button onclick="toggleContent(3)">Next example</button>-->
+<!--        </div>-->
+<!--    </div>-->
     <!--    <div class="content" id="content2-B">This is content 2</div>-->
     <!--    <div class="content" id="content3">This is content 3</div>-->
 </div>
