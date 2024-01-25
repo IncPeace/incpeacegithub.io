@@ -162,6 +162,7 @@ p {
     padding: 1px 1px 1px 8px; /* Adjust padding as needed */
     border: 2px solid #ccc; /* Border color of the container */
     border-radius: 4px; /* Rounded corners */
+    margin-top: 40px; /* Adjust the margin value to control the gap between stacked elements */
     margin-bottom: 5px; /* Adjust the margin value to control the gap between stacked elements */
     margin-right: 5px; /* Adjust the margin value to control the gap between stacked elements */
     background-color: transparent; /* Transparent background */

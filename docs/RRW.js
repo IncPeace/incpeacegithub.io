@@ -49,7 +49,7 @@ function myClickHandler(whateverinput) {
 
 
 function toggleDisplayOn(elementIds) {
-    const changelist = [];
+    // const changelist = [];
     elementIds.forEach((elementId) => {
         const element = document.getElementById(elementId);
         if (element) {
@@ -65,7 +65,7 @@ function toggleDisplayOn(elementIds) {
                 child.style.display = childDisplay === "none" ? "inline-block" : "inline-block";
             }
         // Add the element name to the changelist array
-        changelist.push(element);
+        // changelist.push(element);
         }
     });
     // console.log("inline-block display now on for (input):" + elementIds);
@@ -75,7 +75,7 @@ function toggleDisplayOn(elementIds) {
 
 
 function toggleDisplayBlock(elementIds) {
-    const changelist = [];
+    // const changelist = [];
     elementIds.forEach((elementId) => {
         const element = document.getElementById(elementId);
         if (element) {
@@ -90,7 +90,7 @@ function toggleDisplayBlock(elementIds) {
                 child.style.display = childDisplay === "none" ? "block" : "block";
             }
         // Add the element name to the changelist array
-        changelist.push(element);
+        // changelist.push(element);
         }
     });
     // console.log("block display now on for (inputs):" + elementIds);
@@ -99,7 +99,7 @@ function toggleDisplayBlock(elementIds) {
 
 
 function toggleDisplayOff(elementIds) {
-    const changelist = [];
+    // const changelist = [];
     elementIds.forEach((elementId) => {
         const element = document.getElementById(elementId);
         if (element) {
@@ -114,7 +114,7 @@ function toggleDisplayOff(elementIds) {
                 // console.log("display now off  for child:" + child);
             }
             // Add the element name to the changelist array
-            changelist.push(toString(element));
+            // changelist.push(toString(element));
         }
     });
     // console.log("elements input: " + elementIds);
@@ -310,19 +310,174 @@ document.addEventListener("DOMContentLoaded", function () {
 //     // });
 // });
 
+
 function toggleContent(setNumber) {
-    let currentIndex = 1; // Initialize with the first content
-    console.log(`Button clicked!`);
+    // This variant modifies the function to only populate the contentElements array with elements that contain the property element.style.visibility
+    let currentIndex = 1; // Initialize with the first index
+    const contentElements = []; // Array to store content elements
 
-    return function () {
+    // Populate the contentElements array
+    while (true) {
         const currentContent = document.getElementById(`content${setNumber}-${currentIndex}`);
-        currentContent.style.display = "none"; // Hide the current content
 
-        currentIndex = currentIndex === 3 ? 1 : currentIndex + 1; // Toggle to next content or wrap to the first
-        const nextContent = document.getElementById(`content${setNumber}-${currentIndex}`);
-        nextContent.style.display = "block"; // Show the next content
+        if (currentContent && currentContent.style && currentContent.style.visibility !== undefined) {
+            contentElements.push(currentContent);
+            currentIndex++;
+        } else {
+            // Break the loop when no more elements are found
+            break;
+        }
+    }
 
-        console.log(`Button clicked, targetId: ${setNumber} - ${currentIndex} `);
-    };
+    // Now contentElements array contains all matching elements
+    console.log(contentElements);
+
+
+    // let currentIndex = 0; // Initialize with the first index
+    // const contentElements = []; // Array to store content elements
+    //
+    // // Populate the contentElements array
+    // while (true) {
+    //     const currentContent = document.getElementById(`content${setNumber}-${currentIndex}`);
+    //
+    //     if (currentContent) {
+    //         contentElements.push(currentContent);
+    //         currentIndex++;
+    //     } else {
+    //         // Break the loop when no more elements are found
+    //         break;
+    //     }
+    // }
+    // // Now contentElements array contains all matching elements
+    // console.log(contentElements);
+
+
+    // Find the index of the currently visible element
+    let currentVisibleIndex = -1;
+    for (let i = 0; i < contentElements.length; i++) {
+        const element = contentElements[i];
+        if (element && element.style && element.style.visibility === "visible") {
+            currentVisibleIndex = i;
+            break;
+        }
+    }    // let currentVisibleIndex = -1;
+    // for (let i = 0; i < contentElements.length; i++) {
+    //     if (contentElements[i].style.visibility === "visible") {
+    //         currentVisibleIndex = i;
+    //         break;
+    //     }
+    // }
+
+    // Now contentElements array contains all matching elements
+    console.log("current visible index is at: " + currentVisibleIndex);
+
+    // Toggle the visibility of the current visible element to hidden
+    if (currentVisibleIndex !== -1) {
+        contentElements[currentVisibleIndex].style.visibility = "hidden";
+        contentElements[currentVisibleIndex].style.display = "none";
+    }
+
+    // Find the index of the next element to show (or wrap to the first)
+    const nextIndex = (currentVisibleIndex + 1) % contentElements.length;
+
+    // Toggle the visibility of the next element to visible
+    contentElements[nextIndex].style.visibility = "visible";
+    contentElements[nextIndex].style.display = "inline-block";
 }
+
+//
+//     // Find the index of the currently visible element
+//     let currentVisibleIndex = contentElements.findIndex(
+//         (element) => element.style.visibility === "visible"
+//     );
+//
+//     // Toggle the visibility of the current visible element to hidden
+//     if (currentVisibleIndex !== -1) {
+//         contentElements[currentVisibleIndex].style.visibility = "hidden";
+//     }
+//
+//     // Find the index of the next element to show (or wrap to the first)
+//     const nextIndex = (currentVisibleIndex + 1) % contentElements.length;
+//
+//     // Toggle the visibility of the next element to visible
+//     contentElements[nextIndex].style.visibility = "visible";
+// }
+
+
+//
+// function toggleContent(setNumber) {
+//
+//     let currentIndex = 1; // Initialize with the first index
+//     const contentElements = []; // Array to store content elements
+//
+//     // Populate the contentElements array
+//     while (true) {
+//         const currentContent = document.getElementById(`content${setNumber}-${currentIndex}`);
+//
+//         if (currentContent) {
+//             contentElements.push(currentContent);
+//             currentIndex++;
+//         } else {
+//             // Break the loop when no more elements are found
+//             break;
+//         }
+//     }
+// //     // Now contentElements array contains all matching elements
+//     console.log(contentElements);
+//
+//     // Initialize the currentVisibleIndex to the first visible element (if any)
+//     let currentVisibleIndex = contentElements.findIndex(
+//         (element) => element.style.visibility === "visible"
+//     );
+//
+//     console.log("index " + currentVisibleIndex + " is the first visible element");
+//
+//     return function () {
+//         console.log(`now beginning the return function`);
+//
+//         // Debug: Log the currentVisibleIndex and element visibility
+//         if (currentVisibleIndex !== -1) {
+//             console.log(`Index ${currentVisibleIndex} is currently visible.`);
+//         }
+//
+//         // Toggle the visibility of the currentVisibleIndex element to hidden
+//         if (currentVisibleIndex !== -1) {
+//             contentElements[currentVisibleIndex].style.visibility = "hidden";
+//         }
+//
+//         // Increment the currentVisibleIndex and wrap around if it exceeds the array size
+//         currentVisibleIndex = (currentVisibleIndex + 1) % contentElements.length;
+//
+//         // Toggle the visibility of the next element to visible
+//         contentElements[currentVisibleIndex].style.visibility = "visible";
+//     };
+// }
+
+// This works but  it doesn't do what I want it to.
+
+// function toggleContent(setNumber) {
+//     console.log(`Button clicked!`);
+//     let currentIndex = 1; // Initialize with the first index
+//     const contentElements = []; // Array to store content elements
+//
+//     // Loop until no more elements are found
+//     while (true) {
+//         const currentContent = document.getElementById(`content${setNumber}-${currentIndex}`);
+//
+//         if (currentContent) {
+//             contentElements.push(currentContent);
+//             currentIndex++;
+//         } else {
+//             // Break the loop when no more elements are found
+//             break;
+//         }
+//     }
+//
+//     // Now contentElements array contains all matching elements
+//     console.log(contentElements);
+//
+//     return function () {
+//         // Your toggle logic here
+//     };
+// }
 
