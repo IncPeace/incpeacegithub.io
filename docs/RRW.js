@@ -353,7 +353,8 @@ function toggleContent(setNumber) {
 
 
     // Find the index of the currently visible element
-    let currentVisibleIndex = -1;
+    // let currentVisibleIndex = -1;
+    let currentVisibleIndex = 0;
     for (let i = 0; i < contentElements.length; i++) {
         const element = contentElements[i];
         if (element && element.style && element.style.visibility === "visible") {
