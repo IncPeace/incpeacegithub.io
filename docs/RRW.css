@@ -56,7 +56,7 @@ body {
 .content {
     /*display: none;*/
     display: inline-block;
-    margin-bottom: 30px; /* Adjust the margin value to control the gap between stacked elements */
+    margin-bottom: 50px; /* Adjust the margin value to control the gap between stacked elements */
     /*visibility: hidden;*/
 }
 
